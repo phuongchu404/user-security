@@ -9,4 +9,10 @@ import java.util.List;
 @Repository
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
     List<Permission> findAllByType(String type);
+
+    List<Permission> findAllByTagIn(List<String> tags);
+
+    void deleteAllByTagNotIn(List<String> tags);
+
+    Permission findByTag(String tag);
 }

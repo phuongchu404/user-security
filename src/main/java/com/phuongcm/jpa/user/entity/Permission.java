@@ -3,6 +3,8 @@ package com.phuongcm.jpa.user.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -31,9 +33,11 @@ public class Permission {
     @Column(name = "isWhiteList")
     private Boolean isWhiteList;
 
+    @CreationTimestamp
     @Column(name = "createTime")
     private LocalDateTime createTime;
 
+    @UpdateTimestamp
     @Column(name = "updateTime")
     private LocalDateTime updateTime;
 
